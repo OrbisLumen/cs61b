@@ -42,7 +42,4 @@
     ```java
     Car c1 = new Car("Toyato Supra", 98)
     ```
-
-
-
- 
+    
