@@ -25,8 +25,7 @@
         ↓ java (interpreter)
     Program execution
     ```
-### Object-Oriented Programming
-1. Constructors
+9. Constructors
     ```java
     public class Car{
         String model;
@@ -38,8 +37,16 @@
         }
     }
     ```
-2. Create new object
+10. Create new object
     ```java
     Car c1 = new Car("Toyato Supra", 98)
     ```
+11. Comments
+    ```java
+    /** The first line
+     *  The second line
+     */
+    ```
+    
+
     
