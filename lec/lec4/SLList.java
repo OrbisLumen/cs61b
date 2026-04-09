@@ -1,11 +1,10 @@
-```java
 public class SLList {
 
     private static class IntNode {
 
         public int item;
         public IntNode next;
-        
+
         public IntNode(int f, IntNode r) {
             item = f;
             next = r;
@@ -68,13 +67,3 @@ public class SLList {
     //     return 1 + size(p.next);
     // }
 }
-```
-
-### change to size() method
-- To make `size()` faster, we maintain a cached variable `size` that keeps track of the current number of elements.
-- Update `size` whenever the list is modified (e.g., in `addFirst`, `addLast`).
-- This makes `size()` run in constant time O(1) instead of linear time O(n).
-
-### build the sentinel
-- A sentinel node simplifies `addLast` by removing the empty-list special case.
-- We always start from `sentinel`, so the traversal logic is the same for both empty and non-empty lists.

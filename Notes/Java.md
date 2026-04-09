@@ -31,6 +31,13 @@
     Program execution
     ```
 
+### Change file structure
+
+    Ctrl + Shift + P
+    >Java: Clean Java Language Server Workspace
+
+- to clean Java language server cache (vscode)
+
 ###  Comments
 
 1. single line
