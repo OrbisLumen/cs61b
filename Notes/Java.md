@@ -1,6 +1,7 @@
 # Java
 
 ### Basic
+
 1. In java, all code must be part of a `class`
 2. Classes are difined with
 
@@ -15,8 +16,12 @@
     public static void main(String[] args)
     ```
 6. **Java is `statically` typed** 
-7. The compiler checks that all the types in your program are compatible **before the program ever runs**
-8. Compilation and Interpretation
+
+### Compilation and Interpretation
+
+1. The compiler checks that all the types in your program are compatible **before the program ever runs**
+
+2. Compilation and Interpretation
    
     ```text
     Hello.java 
@@ -25,12 +30,33 @@
         ↓ java (interpreter)
     Program execution
     ```
-9. Comments
+
+###  Comments
+
+1. single line
+   
+   ```java
+   // The single line
+   ```
+
+2. mutiple line
+   
+   ```java
+   /* 
+   the first line
+   the second line
+   */
+   ```
+
+3. Doc comments
+   
     ```java
-    /** The first line
-     *  The second line
+    /** 
+     * The first line
+     * The second line
      */
     ```
+
 ###  Classes in Java
 
 1. Constructors
@@ -46,11 +72,13 @@
         }
     }
     ```
+
 2. Create new object
 
     ```java
     Car c1 = new Car("Toyato Supra", 98)
     ```
+
 3. Seperate codes
 
     ```
@@ -72,44 +100,13 @@
     PS C:\...\cs61b\lec\lec2> javac lec2_intro2/*.java
     PS C:\...\cs61b\lec\lec2> java lec2_intro2.DogLuancher
     ```
-4. Terminology
 
-    ```java
-    public class Dog {
-
-        public int weightInPounds;                  /** Instance variable */
-
-        public Dog(int startingWeight) {            /** Constructor */
-            weightInPounds = startingWeight;
-        }
-
-        public void makeNoise() {                   /** Non-static method */
-            if (weightInPounds < 10) {
-                System.out.println("yipyip!");
-            } else if (weightInPounds < 30) {
-                System.out.println("bark!");
-            } else {
-                System.out.println("arooooooo!");
-            }
-        }
-    }
-    ```
+4. Terminology [Click here to see Examples](./Blocks/Terminology.md)
 
     `Non-static method`, a.k.a `Instance method`. 
     
     (If the method is going to be invoked by an instance of the class, then it should be non-static)
 
-    ```java
-    public class DogLuancher {
-
-        public static void main(String[] args) {
-            Dog smallDog;               /** Declaration */
-            new Dog(20);                /** Instantiation */
-            smallDog = new Dog(5);      /** Instantiation and Assignment */
-            smallDog.makeNoise();       /** Dot -> using a method */        
-        }
-    }
-    ```
     `Declaration`, `Instantiation` and `Assignment` can be combined like this 
 
     ```java
@@ -122,9 +119,56 @@
     ```java
     Dog.makeNoise();
     ```
+
 - Instance methods are invoked using an instance name
 
     ```java
     Dog maya = new Dog(100);
     maya.makeNoise();
     ```
+
+### Public vs. Private
+
+- Use the **private** keyword to prevent code in other classes from using members (or constructors) of a class.
+  
+### Nested classes
+
+- Allowing nested class definition.
+- There are two types:
+  - **Non-static inner class**: (can access outer instance fields)
+  - **Static nested class**: (does not depend on the outer class) 
+
+
+### Types
+
+1. 8 primitive types in Java :
+
+    `byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, `char`
+
+2. Everything else is a reference type
+    
+   - When we declare a variable of any reference type :
+
+       - Java allocates exactly a box of size 64 bits, no matter what type of object.
+       - These bits can be either set to : 
+         - Null (all zeros)
+         - The 64 bit "address" of a specific instance of that class (returned by new)
+
+3. The Golden Rule of Equals (GRoE)
+    
+    y = x **copies** all the bits from x into y.
+
+    (If x and y are reference types, the "address"" is copied)
+
+4. Passing parameters obeys the same rule : 
+   
+    Simply **copy the bits** (also called pass by value) to the new scope.
+
+### Array
+
+1. Arrays are also Objects.
+2. Create a new array :
+    ```java
+    int[] x = new int[]{0, 1, 2, 95, 4}
+    ```
+3. Array's length cannot be changed.
