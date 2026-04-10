@@ -1,6 +1,6 @@
 # Java
 
-### Basic
+## Basic
 
 1. In java, all code must be part of a `class`
 2. Classes are difined with
@@ -64,7 +64,7 @@
      */
     ```
 
-###  Classes in Java
+##  Classes in Java
 
 1. Constructors
 
@@ -146,7 +146,7 @@
   - **Static nested class**: (does not depend on the outer class) 
 
 
-### Types
+## Types
 
 1. 8 primitive types in Java :
 
