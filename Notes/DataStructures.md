@@ -18,7 +18,11 @@
     ```
 2. Generics List
 
+<<<<<<< HEAD
     - Using Generics to build list
+=======
+    - Using `Generics` to build list
+>>>>>>> b3c71699ac112bcfec3958fc32af767ddad4f532
 
 3. SLList (Singly Linked List) [(Here is the code)](./Blocks/SLList.md)
    
@@ -44,6 +48,7 @@
 
     - Promotions :
        - `last` (quicker access)
+<<<<<<< HEAD
 
 ## Array (with java)
 
@@ -64,3 +69,5 @@
     ```python 
     b[2:5] = a[0:3] "Python"
     ```
+=======
+>>>>>>> b3c71699ac112bcfec3958fc32af767ddad4f532

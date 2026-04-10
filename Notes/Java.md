@@ -175,6 +175,25 @@
 
 - Generics let classes, interfaces, and methods work with different data types while keeping type safety.
 - A generic type uses a placeholder like `T` for the actual type.
+<<<<<<< HEAD
+=======
+
+    ```java
+    public class Box<T> {
+        private T item;
+
+        public Box(T i) {
+            item = i;
+        }
+
+        public T get() {
+            return item;
+        }
+    }
+    ```
+
+### Array
+>>>>>>> b3c71699ac112bcfec3958fc32af767ddad4f532
 
     ```java
     public class Box<T> {
