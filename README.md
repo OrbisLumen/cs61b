@@ -8,17 +8,7 @@ CS61B 2019 Fall (Assignments) -> HW, LAB, Project
 
 ## Overview
 
-    ./assignments
-    
 Here is the HW, LAB, Projects
-
-    ./lec
-
-Here is the examples in Lecs
-
-    ./notes
-
-Here is the notes for this CS class 
 
 ## Links
 
