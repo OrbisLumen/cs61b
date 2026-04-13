@@ -171,6 +171,14 @@
    
     Simply **copy the bits** (also called pass by value) to the new scope.
 
+### Constants
+
+In Java, constants are written using:
+```java
+static final TYPE NAME = value;
+```
+
+
 ### Generics
 
 - Generics let classes, interfaces, and methods work with different data types while keeping type safety.
@@ -190,3 +198,103 @@
     }
     ```
 
+## Loop Structure
+
+### while
+
+```java
+while (condition) {
+    statement(s);
+}
+```
+
+### do-while
+
+```java
+do {
+    statement(s);
+} while (condition);
+```
+
+### for
+1. basic for loop :
+    ```java
+    for (initialization; termination; increment) {
+        statement(s)
+    }
+    ```
+2. enhanced for loop :
+    ```java
+    for (Type var : arrayOrCollection) {
+        statement(s);
+    }
+    ```
+
+### continue and break
+
+#### break
+- Immediately exits the loop
+#### continue
+- Skips current iteration
+- Moves to next loop cycle
+
+
+## Input in Java
+
+### Command Line Input（命令行参数）
+
+1. Java receives command line input via:
+
+    ```java
+    public static void main(String[] args)
+    ```
+
+- args is an array of String
+
+2. Example :
+   
+    ```java
+    public class Demo {
+        public static void main(String[] args) {
+            double T = Double.parseDouble(args[0]);
+            double dt = Double.parseDouble(args[1]);
+            String filename = args[2];
+
+            System.out.println(T);
+            System.out.println(dt);
+            System.out.println(filename);
+        }
+    }
+    ```
+3. Run in terminal :
+   
+    ```bash
+    java Demo 100.0 0.5 data.txt
+    ```
+
+### Standard Input（标准输入 / 键盘输入）
+
+1. Use Scanner to read input from keyboard
+
+2. Example :
+    ```java
+    import java.util.Scanner;
+
+    public class Demo {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            int x = sc.nextInt();       // read int
+            double y = sc.nextDouble(); // read double
+            String s = sc.next();       // read one word
+            String line = sc.nextLine();// read entire line
+
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println(s);
+            System.out.println(line);
+
+            sc.close();
+        }
+    }
+    ```
