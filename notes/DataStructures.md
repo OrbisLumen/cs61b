@@ -71,5 +71,5 @@
     b[2:5] = a[0:3] "Python"
     ```
 
-### Resizing Array 
+### Resizing Array (AList)
 [(Here is the code)](./Blocks/AList.md)

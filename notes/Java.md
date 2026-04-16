@@ -66,6 +66,8 @@
 
 ##  Classes in Java
 
+**Everything in java is a sub class of object** 
+
 1. Constructors
 
     ```java
@@ -302,3 +304,164 @@ do {
         }
     }
     ```
+
+## Inheritance
+
+### Interface Inheritance
+
+[List example here](./Blocks/List.md)
+
+- A specification of what, not how.
+- Interface: The list of all method signatures.
+
+### Inpelmentation Inheritance
+
+```java
+default public TYPE NAME() {
+    ...
+}
+```
+- A specification of what and how.
+- By using interface to complete this.
+
+### Implements
+
+```java
+public class AList<Item> implements List<Item> {
+    ...
+}
+
+public class SLList<Item> implements List<Item> {
+    ...
+}
+```
+- List is a hypernym of AList and SLList.
+- AList and SLList are hyponyms.
+- Subclasses must override all of the methods mentioned in interface.
+
+### Extends
+    
+```java
+public class RotatingSSList<Item> extends SLList<Item> {
+    ...
+}
+```
+- `implements` for hypernym is an interface
+- `extends` for hypernym is a class
+
+### Overriding vs. Overloading
+
+1. override :
+    - A `subclass` has a method with the exact same signature as in the `superclass`, we say the subclass overrides the method.
+  
+2. overload :
+    - Methods with the same name but different signatures are overlodaded.
+
+3. `@Override`: to remind it is a overriden method.
+
+### Static Type vs. Dynamic Type
+
+1. Static Type (Compile-Time Type) :
+    - specified at declaration
+    - never changes
+
+2. Dynamic Type (Run-Time Type) :
+    - specified at instantiation 
+    - equal to the type of the object being pointed at
+
+3. Compiler allows method calls based on compile-time type of variable and also allows assignments based on compile-time types.
+
+#### Casting
+
+```java
+Poodle frank = new Poodle("Frank", 5);
+Poodle frankJr = new Poodle("FrankJr", 15);
+
+Dog largerDog = maxDog(frank, frankJr);
+Poodle largerPoodle = (Poodle) maxDog(frank, frankJr);
+```
+### Super
+
+```java
+super.method()
+```
+- to call superclass's method in subclass
+- When a subclass constructor is called, Java will first call a constructor of the superclass.(If there is no none-argument constructor in superclass, you must call super(x))
+
+### Encapsulation
+
+A module is said to be encapsulated if its implementation is completely hidden and it can be accessed only through a documented interface.
+
+### *Implementation Inheritance Defect
+
+Users do not now superclass's impletation and could code new method to break encapsulation
+
+### Comparables vs. Comparators
+
+#### Comparable (内部比较规则）
+
+1. Definition
+```java
+public interface Comparable<T> {
+    int compareTo(T other);
+}
+```
+- Defines natural ordering
+- Implemented inside the class 
+
+2. Example 
+```java 
+public class Dog implements Comparable<Dog> {
+    int size;
+
+    public int compareTo(Dog other) {
+        return this.size - other.size;
+    }
+}
+```
+3. Usage
+```java
+Dog max = Maximizer.max(dog)
+```
+- works when :
+    ```java
+    T extends comparable<T>
+    ```
+
+4. Key Points 
+    - comparison logic is part of the class
+    - Only `one` natural order
+    - Type-safe (no casting)
+  
+#### Comparator (外部比较规则)
+
+1. Definition
+```java
+public interface Comparator<T> {
+    int compare(T a, T b);
+}   
+```
+- Defines custom ordering 
+- Implemented outside the class
+
+2. Example 
+```java
+public class DogSizeComparator implements Comparator<Dog> {
+    public int compare(Dog a, Dog b) {
+        return a.size - b.size;
+    }
+}
+```
+
+3. Usage
+```java
+Comparator<Dog> sc = new DogSizeComparator();
+Dog max = Maximizer.max(dogs, sc);
+```
+
+4. Key Points 
+    - Comparison logic is separate from class
+    - Can define multiple orderings
+    - More flexible
+
+
