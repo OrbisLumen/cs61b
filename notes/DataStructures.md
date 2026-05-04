@@ -325,4 +325,15 @@ A Left-Leaning Red-Black Tree (LLRB) is a binary search tree that simulates a 2-
 - Pay attention to `Cascading Balance`.(连锁反应)
 
 ### Property
+
 **An LLRB has no more than ~2x the height of its 2-3 tree.**
+
+**All the case**
+- 右红左黑 → 左旋
+- 左左连续红 → 右旋
+- 左右都红 → 颜色翻转
+
+### Completion
+
+[Here is the code](./Blocks/LLRB.md)
+
