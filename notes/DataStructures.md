@@ -177,9 +177,9 @@ The improvement of WeightedQuickUnionDS, using path compression.
 
 **Weighted Quick Union with Path Compression has almost constant time operations.**
 
-## Trees
+# Trees
 
-### Definition
+## Definition
 1. Trees
    - A set of nodes.
    - A set of edges that connect those nodes.
@@ -337,3 +337,15 @@ A Left-Leaning Red-Black Tree (LLRB) is a binary search tree that simulates a 2-
 
 [Here is the code](./Blocks/LLRB.md)
 
+# Hashing
+
+## Definition
+
+### Hash tables
+- Data is converted into a hash code, the hash code is then reduced to a valid index.
+- Data is then sorted in a bucket corresponding to that index.
+  - Each bucket is a "separate chain" of items
+- Resize when load factor N/M exceeds some constant.
+  
+### Require
+- Don't **Mutate** Keys
