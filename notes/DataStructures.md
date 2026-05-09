@@ -346,6 +346,33 @@ rightChild(k) = 2 * k + 1;
 parent(k) = k / 2;
 ``` 
 
+## Tree Traversal
+
+```
+        A
+      /   \
+     B     C
+    / \   / \
+   D   E F   G
+```
+**Depth First Traversals**
+- `Level Order`: ABCDEFG
+
+**Depth First Traversals**
+- `Preorder`: ABDECFG
+- `Inorder`: DBEAFCG
+- `Postorder`: DEBFGCA
+
+### Visual Trick
+
+For humans, we trace a path around the graph, from the top going counter-clockwise.
+
+**Preorder**: "Visit" when you cross the left of a node
+**Inorder**: "Visit" when you cross the bottom of a node
+**Postorder**: "Visit" when you cross the right of a node
+
+
+
 ## Binary Search Trees (BST)
 
 ### Definition
@@ -500,3 +527,25 @@ A Left-Leaning Red-Black Tree (LLRB) is a binary search tree that simulates a 2-
   
 ### Require
 - Don't **Mutate** Keys
+
+# Graph
+
+## Definition
+
+A simple graph:
+- No edges that connect a vertex to itself
+- No two edges that connect the same vertices
+
+Types: Directed/Undirected, Acyclic/Cyclic, With Edge Labels
+
+**Terminology**
+- Graph
+  - Set of *vertices*, a.k.a. *nodes*
+  - Set of *edges*
+  - Vertices with an edge between are *adjacent*
+  - Vertices or edges may have *labels* (or *weights*)
+- Path
+  - A sequence of vertices connected by edges
+  - A *simple path* is a path without repeated vertices
+- Cycle
+- Connected
